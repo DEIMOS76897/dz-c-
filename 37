@@ -1,0 +1,36 @@
+//
+// Created by deimos on 15.07.2026.
+//
+
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    const int rows = 7;
+    const int cols = 4;
+    int a[rows][cols];
+
+    for (int i = 0; i < rows; i++) {
+        for (int x = 0; x < cols; x++) {
+            a[i][x] = rand() % 10;
+        }
+    }
+
+    int maxv = a[0][0];
+    int maxi = 0;
+    int maxj = 0;
+
+    for (int i = 0; i < rows; i++) {
+        for (int x = 0; x < cols; x++) {
+            if (a[i][x] > maxv) {
+                maxv = a[i][x];
+                maxi = i;
+                maxj = x;
+            }
+        }
+    }
+
+    cout << "max: " << maxv << ", row: " << maxi << ", col " << maxj;
+    return 0;
+}
