@@ -1,0 +1,35 @@
+//
+// Created by deimos on 15.07.2026.
+//
+
+#include <iostream>
+using namespace std;
+
+int main1() {
+    const int rows = 3;
+    const int cols = 3;
+    int a[rows][cols];
+
+    for (int i = 0; i < rows; i++) {
+        for (int x = 0; x < cols; x++) {
+            a[i][x] = rand() % 10;
+        }
+    }
+
+    int maxs = 0;
+    int maxc = 0;
+
+    for (int x = 0; x < cols; x++) {
+        int s = 0;
+        for (int i = 0; i < rows; i++) {
+            s += a[i][x];
+        }
+        if (x == 0 || s > maxs) {
+            maxs = s;
+            maxc = x;
+        }
+    }
+
+    cout << "max colona: " << maxc << ", suma: " << maxs;
+    return 0;
+}
