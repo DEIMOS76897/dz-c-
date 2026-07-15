@@ -1,0 +1,31 @@
+//
+// Created by deimos on 15.07.2026.
+//
+
+
+#include <iostream>
+using namespace std;
+
+int main2() {
+    const int rows = 4;
+    const int cols = 8;
+    int a[rows][cols];
+
+    for (int i = 0; i < rows; i++) {
+        for (int x = 0; x < cols; x++) {
+            a[i][x] = rand() % 10;
+        }
+    }
+
+    int s = 0;
+    for (int i = 0; i < rows; i++) {
+        for (int x = 0; x < cols; x++) {
+            if (a[i][x] % 2 == 0) {
+                s += a[i][x];
+            }
+        }
+    }
+
+    cout << "summa: " << s;
+    return 0;
+}
